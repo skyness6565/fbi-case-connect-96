@@ -2,6 +2,12 @@ import { FileText, Shield, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import fbiSeal from "@/assets/fbi-seal.png";
 
+const openJivoChat = () => {
+  if (typeof window !== "undefined" && (window as any).jivo_api) {
+    (window as any).jivo_api.open();
+  }
+};
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -41,7 +47,7 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <Button variant="file" size="xl" className="gap-3">
+            <Button variant="file" size="xl" className="gap-3" onClick={openJivoChat}>
               <FileText className="w-5 h-5" />
               File Report
             </Button>
