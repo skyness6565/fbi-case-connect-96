@@ -1,41 +1,53 @@
 import { Quote } from "lucide-react";
+import michaelImg from "@/assets/testimonial-michael.jpg";
+import sarahImg from "@/assets/testimonial-sarah.jpg";
+import davidImg from "@/assets/testimonial-david.jpg";
+import jenniferImg from "@/assets/testimonial-jennifer.jpg";
+import robertImg from "@/assets/testimonial-robert.jpg";
+import patriciaImg from "@/assets/testimonial-patricia.jpg";
 
 const testimonials = [
   {
     quote: "The FBI's rapid response and professional handling of my case was exceptional. Within weeks, they recovered funds I thought were lost forever.",
     author: "Michael R.",
     role: "Fraud Victim",
-    recovered: "$45,000"
+    recovered: "$45,000",
+    image: michaelImg
   },
   {
     quote: "I was skeptical at first, but the FBI team proved their dedication. They worked tirelessly to bring the perpetrators to justice.",
     author: "Sarah L.",
     role: "Identity Theft Victim",
-    recovered: "$120,000"
+    recovered: "$120,000",
+    image: sarahImg
   },
   {
     quote: "Filing my case was simple and the support team kept me informed every step of the way. Justice was served.",
     author: "David K.",
     role: "Investment Fraud Victim",
-    recovered: "$280,000"
+    recovered: "$280,000",
+    image: davidImg
   },
   {
     quote: "The professionalism and expertise of the FBI agents handling my case gave me hope when I had none. They truly care about victims.",
     author: "Jennifer M.",
     role: "Romance Scam Victim",
-    recovered: "$67,000"
+    recovered: "$67,000",
+    image: jenniferImg
   },
   {
     quote: "From the first call to the resolution, the FBI demonstrated why they are the world's premier law enforcement agency.",
     author: "Robert T.",
     role: "Business Email Compromise Victim",
-    recovered: "$350,000"
+    recovered: "$350,000",
+    image: robertImg
   },
   {
     quote: "I never believed I would see my money again. The FBI proved me wrong and restored my faith in the justice system.",
     author: "Patricia W.",
     role: "Elder Fraud Victim",
-    recovered: "$89,000"
+    recovered: "$89,000",
+    image: patriciaImg
   }
 ];
 
@@ -58,12 +70,21 @@ const TestimonialsSection = () => {
               key={index}
               className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors"
             >
-              <Quote className="w-8 h-8 text-primary mb-4" />
-              <p className="text-foreground mb-4 italic">"{testimonial.quote}"</p>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.author}
+                  className="w-14 h-14 rounded-full object-cover border-2 border-primary/30"
+                />
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </div>
+              <Quote className="w-6 h-6 text-primary mb-3" />
+              <p className="text-foreground mb-4 italic text-sm">"{testimonial.quote}"</p>
               <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                <p className="text-sm text-primary font-semibold mt-1">
+                <p className="text-sm text-primary font-semibold">
                   Recovered: {testimonial.recovered}
                 </p>
               </div>

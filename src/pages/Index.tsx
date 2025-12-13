@@ -4,7 +4,6 @@ import SuccessRateSection from "@/components/SuccessRateSection";
 import WhyFileSection from "@/components/WhyFileSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import HowScammersOperateSection from "@/components/HowScammersOperateSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import JivoChat from "@/components/JivoChat";
 
@@ -18,7 +17,6 @@ const Index = () => {
         <WhyFileSection />
         <TestimonialsSection />
         <HowScammersOperateSection />
-        <ContactSection />
       </main>
       <Footer />
       <JivoChat />

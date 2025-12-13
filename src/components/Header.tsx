@@ -2,6 +2,12 @@ import { Shield, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
+const openJivoChat = () => {
+  if (typeof window !== "undefined" && (window as any).jivo_api) {
+    (window as any).jivo_api.open();
+  }
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,9 +43,12 @@ const Header = () => {
             <a href="#why-file" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Why File a Case
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
+            <button 
+              onClick={openJivoChat}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              Start Live Chat
+            </button>
           </nav>
         </div>
       </div>
