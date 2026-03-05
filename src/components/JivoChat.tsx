@@ -8,7 +8,7 @@ const JivoChat = () => {
     }
 
     const script = document.createElement("script");
-    script.src = "//code.jivosite.com/widget/JNHIXsYsZL";
+    script.src = "//code.jivosite.com/widget/H4LwyU9bAL";
     script.async = true;
     document.body.appendChild(script);
 
